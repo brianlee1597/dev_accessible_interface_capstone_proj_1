@@ -1,4 +1,3 @@
-
 # Language Learning with Text-to-Speech
 
 Basic app. (description to come later)
@@ -19,10 +18,10 @@ Power up virtual env:
   source venv/bin/activate
 ```
 
-Install Flask:
+Install Dependencies:
 
 ```bash
-  pip install flask
+  pip install -r requirements.txt
 ```
 
 export app.py:
@@ -36,4 +35,3 @@ Finally run flask:
 ```bash
   flask run
 ```
-
