@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% block content %}
+<div class="yclanguage">{{language['language']}}</div>
+<div class="ycintro">{{language['intro']}}</div>
+<div class="yccontainer1">
+  <div class="row">
+    {% for word in language['words'] %}
+    <div class="col-md-4">
+      <div class="ycdragblock">
+        <div>
+          <span>
+            <img class="ycsmallpic" src="{{word['img']}}" alt="word_image" />
+          </span>
+
+          <span class="ycwordtitle">{{word['word']}}</span>
+        </div>
+
+        <div class="ycwordinfo">
+          <span class="bold">Meaning: </span>
+          <span>{{word['meaning']}}</span>
+          <div>
+            <span class="bold">Origins: </span>
+            <span>Something Placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <hr />
+  </div>
+  <div class="ycbottombar">
+    <div class="row">
+      <div class="col-md-2">
+        <button class="ycb" id="previous">
+          <i class="arrow left"></i>Language prev
+        </button>
+      </div>
+      <div class="col-md-8 ycmidsmall"></div>
+      <div class="col-md-2">
+        <button class="ycb" id="next">
+          Language next<i class="arrow right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>

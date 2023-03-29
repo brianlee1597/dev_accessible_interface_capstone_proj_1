@@ -27,7 +27,7 @@ Install Dependencies:
 export app.py:
 
 ```bash
-  export FLASK_APP=app.py
+  export FLASK_APP=server.py
 ```
 
 Finally run flask:
