@@ -40,8 +40,7 @@ def index():
 @app.route('/language/<language_key>')
 def language(language_key):
     try:
-        language = language=language_dict[language_key]
-        return render_template('language.html', language=language)
+        return render_template('language.html', language=language_dict[language_key])
     except:
         return render_template('404.html')
 
