@@ -27,7 +27,9 @@ language_dict = {
                 'img': 'https://i.pinimg.com/originals/2e/e3/e6/2ee3e6df94e4f7cb3e719c440a122fbe.jpg',
                 'meaning': 'Friend',
             }
-        ]
+        ],
+        'prev': 'chinese',
+        'next': 'french',
     },
 }
 
@@ -37,7 +39,11 @@ def index():
 
 @app.route('/language/<language_key>')
 def language(language_key):
-    return render_template('language.html', language=language_dict[language_key])
+    try:
+        language = language=language_dict[language_key]
+        return render_template('language.html', language=language)
+    except:
+        return render_template('404.html')
 
 if __name__ == '__main__':
    app.run(debug = True)
