@@ -31,11 +31,57 @@ language_dict = {
         'prev': 'chinese',
         'next': 'french',
     },
+    'french': {
+        'language': 'French',
+        'intro': 'French Language',
+        'words': [
+            {
+                'word': 'Salut',
+                'img': 'https://cdn.dribbble.com/users/3128810/screenshots/12073708/happy_child_illustration__1_.png',
+                'meaning': 'Hello',
+            },
+            {
+                'word': 'Amour',
+                'img': 'https://static.vecteezy.com/system/resources/previews/000/240/062/original/couple-in-love-illustration-vector.jpg',
+                'meaning': 'Love',
+            },
+            {
+                'word': 'Sourire',
+                'img': 'https://i.pinimg.com/originals/2e/e3/e6/2ee3e6df94e4f7cb3e719c440a122fbe.jpg',
+                'meaning': 'Smile',
+            }
+        ],
+        'prev': 'korean',
+        'next': 'japanese',
+    },
+    'japanese': {
+        'language': 'Japanese',
+        'intro': 'Japanese Language',
+        'words': [
+            {
+                'word': 'Salut',
+                'img': 'https://cdn.dribbble.com/users/3128810/screenshots/12073708/happy_child_illustration__1_.png',
+                'meaning': 'Hello',
+            },
+            {
+                'word': 'Amour',
+                'img': 'https://static.vecteezy.com/system/resources/previews/000/240/062/original/couple-in-love-illustration-vector.jpg',
+                'meaning': 'Love',
+            },
+            {
+                'word': 'Sourire',
+                'img': 'https://i.pinimg.com/originals/2e/e3/e6/2ee3e6df94e4f7cb3e719c440a122fbe.jpg',
+                'meaning': 'Smile',
+            }
+        ],
+        'prev': 'korean',
+        'next': 'japanese',
+    },
 }
 
 @app.route('/')
 def index():
-    return render_template('welcome.html')
+    return render_template('main.html')
 
 @app.route('/language/<language_key>')
 def language(language_key):
