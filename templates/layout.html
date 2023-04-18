@@ -17,21 +17,7 @@
     <title>{% block title %}Language Learner{% endblock %}</title>
   </head>
   <body>
-    <nav id="nav" tabindex="1">
-      <div id="nav-container">
-        <img
-          id="nav-logo"
-          tabindex="2"
-          src="{{url_for('static', filename='images/logo.png')}}"
-        />
-        <div id="nav-links">
-          <a id="nav-learning" tabindex="3">Learning</a>
-          <a id="nav-quiz" tabindex="4">Quiz</a>
-        </div>
-      </div>
-    </nav>
-
-    <div id="page_container">{% block content %} {% endblock %}</div>
+    {% block content %} {% endblock %}
   </body>
 
   <script src="{{url_for('static', filename='function.js')}}"></script>

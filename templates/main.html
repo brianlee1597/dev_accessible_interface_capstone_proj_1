@@ -1,4 +1,26 @@
 {% extends 'layout.html' %} {% block title %}Language Learner{% endblock %} {%
 block content %}
-<div id="main">Hello world</div>
+<div id="main">
+  <div id="inner-container">
+    <h1 id="main-title" tabindex="1">
+      Welcome to our language learning text-to-speech site
+    </h1>
+
+    <div id="main-options" tabindex="2">
+      <div id="hover-select" class="option red" tabindex="3">
+        hover/click mouse to select
+      </div>
+      <div id="space-speech" class="option orange" tabindex="4">
+        press space to play speech
+      </div>
+      <div id="tab-navigate" class="option yellow" tabindex="5">
+        press tab to navigate
+      </div>
+    </div>
+
+    <div id="button-container">
+      <button id="korean-button" tabindex="6">Learn Korean</button>
+    </div>
+  </div>
+</div>
 {% endblock %}

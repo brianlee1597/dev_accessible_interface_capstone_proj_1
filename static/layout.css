@@ -22,40 +22,88 @@ body {
   }
 }
 
-nav {
+#main {
   width: 100vw;
-  height: 5em;
-  background-color: transparent;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  position: relative;
+  height: 100vh;
+  display: grid;
+  place-items: center;
 }
 
-nav > #nav-container {
+#main > #inner-container {
+  width: 100%;
   max-width: 992px;
-  height: 5em;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  height: 100%;
+  padding: 5em 0;
+  text-align: center;
 
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 5em;
 }
 
-nav > #nav-container > #nav-links {
-  display: flex;
-  flex-direction: row;
-  gap: 2em;
+#main > #inner-container > #main-title {
+  text-transform: uppercase;
+  font-size: 5em;
 }
 
-/* nav > #nav-container */
+#main > #inner-container > #main-options {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
 
-#page_container {
-  position: absolute;
-  max-width: 992px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+#main > #inner-container > #main-options > .option {
+  font-size: 2em;
+  text-transform: uppercase;
+  padding: 1em 0;
+  border-radius: 1em;
+}
+
+#main > #inner-container > #main-options > .red {
+  background: red;
+  background: radial-gradient(
+    circle,
+    red 0%,
+    red 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+#main > #inner-container > #main-options > .orange {
+  background: orange;
+  background: radial-gradient(
+    circle,
+    orange 0%,
+    orange 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+#main > #inner-container > #main-options > .yellow {
+  background: yellow;
+  background: radial-gradient(
+    circle,
+    yellow 0%,
+    yellow 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+#button-container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: fit-content;
+}
+
+#button-container > button {
+  font-size: 3em;
+  width: 100%;
+  max-width: 80%;
+  min-height: 100px;
+  background-color: lightgreen;
+  border-radius: 0.25em;
+  border: 5px solid black;
 }

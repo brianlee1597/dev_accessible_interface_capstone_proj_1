@@ -14,12 +14,10 @@ const speakText = (text) => {
 }
 
 const text = {
-    "body": "welcome to language learner",
-    "nav": "this is the navigation bar section",
-    "nav-logo": "navigation logo",
-    "nav-learning": "learning page link",
-    "nav-quiz": "quiz page link",
-
-    "main": "this is the languager learner home section",
-    
+    "main-title": "welcome to our language learning text to speech site",
+    "main-options": "this is the introduction and guide section",
+    "hover-select": "hover or click to select",
+    "space-speech": "press space to play speech",
+    "tab-navigate": "press tab to navigate",
+    "korean-button": "this is the button to take you to learning page, press enter or click on the button to learn korean",
 }
