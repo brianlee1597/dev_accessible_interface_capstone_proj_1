@@ -1,4 +1,78 @@
 {% extends 'layout.html' %} {% block title %}Language Learner{% endblock %} {%
 block content %}
-<div id="main">Hello world</div>
+<div id="main">
+  <div id="inner-container">
+    <h1 id="learn-title" tabindex="1">
+      Welcome to the korean language learning page!
+    </h1>
+
+    <div id="learn-intro" tabindex="2">
+      <div id="learn-tab-navigate" class="intro" tabindex="3">
+        Use tab to navigate from top to bottom
+      </div>
+      <div id="learn-f-pair" class="intro" tabindex="4">
+        press F over a word-pair to magnify it
+      </div>
+      <div id="learn-hover" class="intro" tabindex="5">
+        Hover and press space on any word or sentence to activate text-to-speech
+      </div>
+    </div>
+
+    <div id="words" tabindex="6">
+      <div id="word-1" class="word" tabindex="7">
+        <div id="english-word-1" class="english" tabindex="8">Hello</div>
+        <div id="korean-word-1" class="korean" tabindex="9">안녕하세요</div>
+      </div>
+      <div id="word-2" class="word" tabindex="10">
+        <div id="english-word-2" class="english" tabindex="11">Good Bye</div>
+        <div id="korean-word-2" class="korean" tabindex="12">안녕히 가세요</div>
+      </div>
+      <div id="word-3" class="word" tabindex="13">
+        <div id="english-word-3" class="english" tabindex="14">love you</div>
+        <div id="korean-word-3" class="korean" tabindex="15">사랑해요</div>
+      </div>
+      <div id="word-4" class="word" tabindex="16">
+        <div id="english-word-4" class="english" tabindex="17">Hungry</div>
+        <div id="korean-word-4" class="korean" tabindex="18">배고파요</div>
+      </div>
+      <div id="word-5" class="word" tabindex="19">
+        <div id="english-word-5" class="english" tabindex="20">Thirsty</div>
+        <div id="korean-word-5" class="korean" tabindex="21">목말라요</div>
+      </div>
+      <div id="word-6" class="word" tabindex="22">
+        <div id="english-word-6" class="english" tabindex="23">happy</div>
+        <div id="korean-word-6" class="korean" tabindex="24">행복해요</div>
+      </div>
+    </div>
+
+    <div id="sentences" tabindex="25">
+      <div id="sentence-1" class="sentence" tabindex="26">
+        <div id="english-sentence-1" class="english" tabindex="27">
+          hello, my name is harry potter
+        </div>
+        <div id="korean-sentence-1" class="korean" tabindex="28">
+          안녕하세요, 제 이름은 해리 포터 에요
+        </div>
+      </div>
+      <div id="sentence-2" class="sentence" tabindex="29">
+        <div id="english-sentence-2" class="english" tabindex="30">
+          i love you but i'm very hungry (informal)
+        </div>
+        <div id="korean-sentence-2" class="korean" tabindex="31">
+          사랑하는데, 나 지금 너무 배고파
+        </div>
+      </div>
+      <div id="sentence-3" class="sentence" tabindex="32">
+        <div id="english-sentence-3" class="english" tabindex="33">
+          now that I ate, I am happy (informal)
+        </div>
+        <div id="korean-sentence-3" class="korean" tabindex="34">
+          밥먹고 나니까 행복하다
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="popup"></div>
+</div>
 {% endblock %}

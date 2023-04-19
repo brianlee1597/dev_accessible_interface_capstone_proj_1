@@ -22,6 +22,43 @@ body {
   }
 }
 
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  border-radius: 1em;
+
+  width: 100%;
+  max-width: 992px;
+  height: 25em;
+
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  overflow: hidden;
+}
+
+#popup > * {
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+#popup > .english {
+  background-color: pink;
+  color: white;
+}
+
+#popup > .korean {
+  background-color: white;
+  color: black;
+}
+
 #main {
   width: 100vw;
   height: 100vh;
@@ -98,12 +135,84 @@ body {
   height: fit-content;
 }
 
-#button-container > button {
+#button-container > a {
+  color: black;
   font-size: 3em;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
   width: 100%;
   max-width: 80%;
   min-height: 100px;
   background-color: lightgreen;
   border-radius: 0.25em;
   border: 5px solid black;
+  cursor: pointer;
+}
+
+#learn-intro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+#words {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+#words > .word {
+  width: 100%;
+  height: 10em;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  overflow: hidden;
+}
+
+#words > .word > * {
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+  font-size: 1.275em;
+  font-weight: 500;
+}
+
+#words > .word > .english {
+  background-color: pink;
+  color: white;
+}
+
+#sentences {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+
+#sentences > .sentence {
+  width: 100%;
+  height: 7.5em;
+  border-radius: 1em;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  overflow: hidden;
+}
+
+#sentences > .sentence > * {
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+  font-size: 1.275em;
+  font-weight: 500;
+}
+
+#sentences > .sentence > .english {
+  background-color: pink;
+  color: white;
 }
