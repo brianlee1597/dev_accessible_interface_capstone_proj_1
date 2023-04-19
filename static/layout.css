@@ -22,6 +22,15 @@ body {
   }
 }
 
+#popup-background {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #popup {
   display: none;
   position: fixed;
@@ -150,10 +159,27 @@ body {
   cursor: pointer;
 }
 
+#learn-title {
+  font-size: 3.5em;
+}
+
 #learn-intro {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
+}
+
+#learn-intro > .intro {
+  font-size: 1.275em;
+  display: grid;
+  place-items: center;
+  background: pink;
+  background: radial-gradient(
+    circle,
+    pink 0%,
+    pink 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 #words {

@@ -1,6 +1,7 @@
 jQuery(() => {
     let word = null;
     let hover = null;
+    let popup = false;
 
     $("*").on("focus", (e) => {
         e.preventDefault(); 
@@ -38,10 +39,14 @@ jQuery(() => {
 
             $("#popup").html($(word).html());
             $("#popup").css("display", "grid").show();
+            $("#popup-background").show();
+            popup = true;
         }
 
         if (e.key === "Escape") {
             $("#popup").hide();
+            $("#popup-background").hide();
+            popup = false;
         }
 
         if (e.key === " ") {
@@ -49,23 +54,62 @@ jQuery(() => {
             if (!hover || !$(hover).attr("tabindex")) return;
             speakText(hover.id);
         }
+        
+        if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+            if (!popup) return;
+
+            if (e.key === "ArrowLeft") {
+                const english = $("#popup").find(".english").text();
+                speakText(null, english, "en-US");
+
+                $("#popup").find(".english").css({
+                    background: "pink",
+                    color: "white",
+                })
+
+                $("#popup").find(".korean").css({
+                    background: "white",
+                    color: "black",
+                })
+            } else if (e.key === "ArrowRight") {
+                const korean = $("#popup").find(".korean").text();
+                speakText(null, korean, "ko-KR");
+
+                $("#popup").find(".korean").css({
+                    background: "pink",
+                    color: "white",
+                })
+
+                $("#popup").find(".english").css({
+                    background: "white",
+                    color: "black",
+                })
+            }
+        }   
     });
 })
 
-const speakText = (id) => {
-    const msg = new SpeechSynthesisUtterance();
-    msg.text = text[id];
-
-    if (id.includes("korean")) {
-        msg.lang = "ko-KR";
+const speakText = (id, text, type) => {
+    if (id) {
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = text[id];
+    
+        if (id.includes("korean")) {
+            msg.lang = "ko-KR";
+        }
+    
+        if (id === "english-sentence-1") {
+            msg.lang = "en-GB";
+            msg.pitch = 2;
+        }
+    
+        window.speechSynthesis.speak(msg);
+    } else {
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        msg.lang = type;
+        window.speechSynthesis.speak(msg);
     }
-
-    if (id === "english-sentence-1") {
-        msg.lang = "en-GB";
-        msg.pitch = 2;
-    }
-
-    window.speechSynthesis.speak(msg);
 }
 
 const text = {
