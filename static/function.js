@@ -8,11 +8,6 @@ jQuery(() => {
         speakText(e.target.id);
     })
 
-    $("*"). on("blur", (e) => {
-        e.preventDefault();
-        window.speechSynthesis.cancel();
-    })
-
     $("*").on("mousedown", (e) => {
         e.preventDefault();
     })
@@ -29,7 +24,7 @@ jQuery(() => {
         hover = e.target;
     })
 
-    $("*:not(body)").on("mouseleave", function(e) {
+    $("*:not(body)").on("mouseleave", function() {
         hover = null;
     })
 
@@ -55,44 +50,41 @@ jQuery(() => {
             speakText(hover.id);
         }
         
-        if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-            if (!popup) return;
+        if (e.key === "ArrowLeft" && popup) {
+            const english = $("#popup").find(".english").text();
+            speakText(null, english, "en-US");
+            
+            $("#popup").find(".english").css({
+                background: "pink",
+                color: "white",
+            })
+            $("#popup").find(".korean").css({
+                background: "white",
+                color: "black",
+            })
+        }
 
-            if (e.key === "ArrowLeft") {
-                const english = $("#popup").find(".english").text();
-                speakText(null, english, "en-US");
+        if (e.key === "ArrowRight" && popup) {
+            const korean = $("#popup").find(".korean").text();
+            speakText(null, korean, "ko-KR");
 
-                $("#popup").find(".english").css({
-                    background: "pink",
-                    color: "white",
-                })
-
-                $("#popup").find(".korean").css({
-                    background: "white",
-                    color: "black",
-                })
-            } else if (e.key === "ArrowRight") {
-                const korean = $("#popup").find(".korean").text();
-                speakText(null, korean, "ko-KR");
-
-                $("#popup").find(".korean").css({
-                    background: "pink",
-                    color: "white",
-                })
-
-                $("#popup").find(".english").css({
-                    background: "white",
-                    color: "black",
-                })
-            }
-        }   
+            $("#popup").find(".korean").css({
+                background: "pink",
+                color: "white",
+            })
+            $("#popup").find(".english").css({
+                background: "white",
+                color: "black",
+            })
+        }
     });
 })
 
 const speakText = (id, text, type) => {
-    if (id) {
-        const msg = new SpeechSynthesisUtterance();
-        msg.text = text[id];
+    const msg = new SpeechSynthesisUtterance();
+
+    if (id !== null) {
+        msg.text = speech[id];
     
         if (id.includes("korean")) {
             msg.lang = "ko-KR";
@@ -102,23 +94,22 @@ const speakText = (id, text, type) => {
             msg.lang = "en-GB";
             msg.pitch = 2;
         }
-    
-        window.speechSynthesis.speak(msg);
     } else {
-        const msg = new SpeechSynthesisUtterance();
         msg.text = text;
         msg.lang = type;
-        window.speechSynthesis.speak(msg);
     }
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(msg);
 }
 
-const text = {
+const speech = {
     "main-title": "welcome to our language learning text to speech site",
     "main-options": "this is the introduction and guide section",
     "hover-select": "hover or click over an element to select it for text to speech",
     "space-speech": "press space to play speech",
     "tab-navigate": "press tab to navigate the page",
-    "korean-button": "this is the button to take you to learning page, press enter or click on the button to learn korean",
+    "learn-button": "this is the button to take you to learning page, press enter or click on the button to learn korean",
 
     "learn-title": "welcome to the korean language learning page",
     "learn-intro": "here are some guidelines for the page accessibility",

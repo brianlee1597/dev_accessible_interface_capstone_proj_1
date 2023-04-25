@@ -191,12 +191,10 @@ body {
 #words > .word {
   width: 100%;
   height: 10em;
-  border-radius: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  overflow: hidden;
 }
 
 #words > .word > * {
@@ -222,12 +220,10 @@ body {
 #sentences > .sentence {
   width: 100%;
   height: 7.5em;
-  border-radius: 1em;
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 0;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  overflow: hidden;
 }
 
 #sentences > .sentence > * {
@@ -241,4 +237,13 @@ body {
 #sentences > .sentence > .english {
   background-color: pink;
   color: white;
+}
+
+[tabindex] {
+  cursor: help;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+[tabindex]:focus {
+  outline: 3px solid red;
 }
