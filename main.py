@@ -6,10 +6,6 @@ app = Flask(__name__)
 def index():
     return render_template('main.html')
 
-@app.route('/quiz')
-def quiz():
-    return render_template('quiz.html')
-
 @app.route('/learn/korean')
 def language():
     return render_template('learn.html')

@@ -149,8 +149,8 @@ const speech = {
     "korean-sentence-1": "안녕하세요, 제 이름은 해리 포터 에요",
 
     "sentence-2": "sentence two",
-    "english-sentence-2": "i love you but i'm very hungry",
-    "korean-sentence-2": "사랑하는데, 나 지금 너무 배고파",
+    "english-sentence-2": "It was nice to meet you, good bye",
+    "korean-sentence-2": "만나서 반가웠어요, 안녕히 가세요",
 
     "sentence-3": "sentence three",
     "english-sentence-3": "now that I ate, I am happy",
