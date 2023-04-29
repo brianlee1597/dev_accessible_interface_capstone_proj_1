@@ -1,6 +1,6 @@
 # Language Learning with Text-to-Speech
 
-Basic app. (description to come later)
+Milestone 3 submission, code part. The PDF writeup is in a separate file.
 
 ## Run Locally
 
@@ -24,10 +24,10 @@ Install Dependencies:
   pip install -r requirements.txt
 ```
 
-export app.py:
+export main.py:
 
 ```bash
-  export FLASK_APP=server.py
+  export FLASK_APP=main.py
 ```
 
 Finally run flask:
